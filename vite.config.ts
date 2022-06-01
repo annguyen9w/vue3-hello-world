@@ -5,9 +5,6 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const isProd = mode === 'production'
-  const isReport = mode === 'report'
-
   const root = process.cwd()
   const env = loadEnv(mode, root)
   console.log('mode', mode)
@@ -22,7 +19,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       proxy: {
-        ['/api/v1']: {
+        [env.VITE_BASE_API_PROXY_PREFIX || '/api/v1']: {
           target: env.VITE_BASE_API || 'http://localhost:3000',
           changeOrigin: true
         }
