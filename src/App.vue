@@ -8,7 +8,7 @@ const msg = ref('')
 
 onMounted(async () => {
   console.log('onMounted')
-  const { data } = await axios.get('/api/v1')
+  const { data } = await axios.get('/api/v1/')
   msg.value = data
 })
 </script>
