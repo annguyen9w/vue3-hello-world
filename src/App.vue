@@ -23,6 +23,7 @@ onMounted(async () => {
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/users">Users</RouterLink>
       </nav>
     </div>
   </header>
@@ -97,12 +98,14 @@ nav a:first-of-type {
 
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     padding: 0 2rem;
   }
 
   header {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
@@ -118,7 +121,7 @@ nav a:first-of-type {
   }
 
   nav {
-    text-align: left;
+    text-align: center;
     margin-left: -1rem;
     font-size: 1rem;
 
